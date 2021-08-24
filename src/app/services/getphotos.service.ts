@@ -1,8 +1,9 @@
 import { Injectable, ɵCREATE_ATTRIBUTE_DECORATOR__POST_R3__ } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { albuminterface } from '../interfaces/album';
-import { LoremIpsum } from "lorem-ipsum";
+
 import { Observable, forkJoin } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,9 @@ import { Observable, forkJoin } from 'rxjs';
 export class GetphotosService {
 
     public  URL:string='https://picsum.photos/id/';
-    public lorem = new LoremIpsum({
-    sentencesPerParagraph: {
-      max: 8,
-      min: 4
-    },
-    wordsPerSentence: { 
-      max: 16,
-      min: 4
-    }
-  });
+    
   
-  public albums:albuminterface[]=[];
+  public album:albuminterface[]=[];
   public albumsfinal: any[]=[];
   public terminado:boolean=false
   
@@ -38,9 +30,15 @@ export class GetphotosService {
     return forkJoin(observables);
   }
 
-  private delay(ms = 500): Promise<unknown> {
-    return new Promise(res => setTimeout(res, ms))
-  };
-
+  
+  public recibirlista(lista:albuminterface[]){
+    this.album=lista;
+    console.log("he llegado al servicio")
+    //console.log(this.album)
+  }
+  public mandarlista(){
+    return this.album
+  }
+  
 }
 

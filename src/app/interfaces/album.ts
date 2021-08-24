@@ -1,7 +1,7 @@
 export interface albuminterface{
      id:string
-     img:string
      author:string
+     download_url:string
      text:string
 
 }
