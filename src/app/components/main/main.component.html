@@ -1,20 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid d-flex flex-row-reverse">
-        <div class="d-flex ">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" [(ngModel)]="search">
-          <button class="btn btn-outline-success" (click)="iraresultadobusqueda()">Search</button>
-        </div>
+<nav class="navbar navbar-expand-lg menu">
+  <a class=" nav-link text-light" href="#">ENCORE LAB</a>
+  <a class=" nav-link text-light" href="#">Home</a>
+  <a class=" nav-link text-light" href="#">Favourites</a>
+</nav>
+<div class="row">
+  <div class="container-fluid">
+    <div class=" mt-4 mb-4 d-flex col-5 mx-auto ">
+      <input class="form-control me-2 borders" 
+      type="search" 
+      placeholder="SEARCH" 
+      aria-label="Search" 
+      name="search" 
+      [(ngModel)]="search"
+      (click)="iraresultadobusqueda()">
       
     </div>
-  </nav>
+  
+</div>
+</div>
+    
+ 
 <div class="container">
     <div class="row d-flex flex-row">
-            <div *ngFor="let item of lista"class="card" style="width: 18rem;">
+            <div *ngFor="let item of lista"class="card borders m-1" style="width: 18rem;">
+                  <a href="#" class="btn btn-primary boton">Añadir a favoritos</a>
                     <img src={{item.download_url}} class="card-img-top" alt="...">
                     <div class="card-body">
+                      
                       <h5 class="card-title"> {{item.author}} </h5>
                       <p class="card-text" >{{item.text}}</p>
-                      <a href="#" class="btn btn-primary">Añadir a favoritos</a>
+                     
                     </div>
                   </div>
     </div>
