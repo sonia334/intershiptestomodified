@@ -13,6 +13,7 @@ export class MainComponent  {
 
   public lista: albuminterface[]=[];
   public search: string = '';
+  public visible:boolean=false
 
   public lorem = new LoremIpsum({
     sentencesPerParagraph: {
@@ -41,5 +42,10 @@ export class MainComponent  {
     this.getphotos.recibirlista(this.lista)
     this.search='';
   }
-
+public botonvisible(){
+  this.visible=true;
+}
+public botoninvisible(){
+  this.visible=false
+}
 }
